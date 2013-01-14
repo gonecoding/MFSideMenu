@@ -111,6 +111,14 @@
     return menu;
 }
 
+#pragma mark - 
+#pragma mark - Deallocating the menu
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark -
 #pragma mark - Navigation Controller View Lifecycle
 
