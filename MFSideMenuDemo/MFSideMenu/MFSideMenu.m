@@ -240,9 +240,14 @@
         }
     }
     
-    if([self backButtonEnabled] && self.navigationController.viewControllers.count > 1
+    if(self.navigationController.viewControllers.count > 1
        && self.menuState == MFSideMenuStateHidden) {
-        navigationItem.leftBarButtonItem = [self backBarButtonItem];
+        if([self backButtonEnabled]) {
+            navigationItem.leftBarButtonItem = [self backBarButtonItem];
+        }
+        else {
+            navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem;
+        }
     }
 }
 
